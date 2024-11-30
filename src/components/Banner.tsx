@@ -31,13 +31,15 @@ const Banner = async () => {
           </div>
           <Button className="px-4 py-2 text-sm">Shop Now</Button>
         </div>
-        <Image
-          width={500}
-          height={500}
-          src={urlFor(singleBanner?.image).url()}
-          alt={banners[0].title}
-          className="object-contain h-72 md:h-full max-h-[600px] self-end group-hover:scale-105 hoverEffect"
-        />
+        {singleBanner?.image && (
+          <Image
+            width={500}
+            height={500}
+            src={urlFor(singleBanner?.image)?.url()}
+            alt={banners[0].title}
+            className="object-contain h-72 md:h-full max-h-[600px] self-end group-hover:scale-105 hoverEffect"
+          />
+        )}
       </div>
 
       {/* Right half - two stacked images */}
